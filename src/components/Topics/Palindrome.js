@@ -5,47 +5,34 @@ class Palindrome extends Component {
         super();
     
         this.state = {
-          unfilteredArray: [
-            "test1",
-            "testy2",
-            "test3",
-            "testy4",
-            "test5",
-            "testy13",
-            "test14",
-            "testy15"
-          ],
-          filteredArray: [],
-          userInput: ""
-        };
+          palindrome: '',
+          userInput: ''
+        }
       }
     
       handleChange(e) {
         this.setState({userInput: e});
       }
     
-      filtersString(userInput) {
-        let strArray = this.state.unfilteredArray;
-        let filtered = [];
-    
-        for (let i = 0; i < strArray.length; i++) {
-          if (strArray[i].includes(userInput)) {
-            filtered.push(strArray[i]);
-          }
+      palindrome(userInput) {
+
+        // console.log(userInput)
+        if (userInput === userInput.split('').reverse().join('')) {
+            console.log(userInput.split('').reverse().join(''))
+            this.setState({palindrome: true})
+        } else {
+            console.log(userInput.split('').reverse().join(''))
+            this.setState({palindrome: false})
         }
-    
-        let result = {filteredArray: filtered};
-        this.setState(result);
-    
+        
+
       }
     
       render() {
         return (
           <div className="puzzleBox filterStringPB">
             <h4>Palindrome</h4>
-            <span className="puzzleText">
-              Unfiltered Array: {JSON.stringify(this.state.unfilteredArray)}{" "}
-            </span>
+       
             <input
               onChange={e => this.handleChange(e.target.value)}
               className="inputLine"
@@ -55,17 +42,17 @@ class Palindrome extends Component {
             />
             <button
               onClick={() => {
-                this.filtersString(this.state.userInput);
+                this.palindrome(this.state.userInput);
               }}
               className="confirmationButton"
             >
-              Filter
+              Palindrome?
             </button>
             <span className="resultsBox filterStringRB">
-              Filtered Array: {JSON.stringify(this.state.filteredArray)}
+              Palindrome? {JSON.stringify(this.state.palindrome)}
             </span>
           </div>
-        );
+        )
       }
 }
 
