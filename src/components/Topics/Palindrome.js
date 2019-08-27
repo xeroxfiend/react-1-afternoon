@@ -18,10 +18,10 @@ class Palindrome extends Component {
 
         // console.log(userInput)
         if (userInput === userInput.split('').reverse().join('')) {
-            console.log(userInput.split('').reverse().join(''))
+            // console.log(userInput.split('').reverse().join(''))
             this.setState({palindrome: true})
         } else {
-            console.log(userInput.split('').reverse().join(''))
+            // console.log(userInput.split('').reverse().join(''))
             this.setState({palindrome: false})
         }
         
@@ -33,7 +33,7 @@ class Palindrome extends Component {
           <div className="puzzleBox filterStringPB">
             <h4>Palindrome</h4>
        
-            <input
+            <input placeholder='Enter word'
               onChange={e => this.handleChange(e.target.value)}
               className="inputLine"
               type="text"

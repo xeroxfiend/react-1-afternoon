@@ -46,7 +46,7 @@ class FilterString extends Component {
         <span className="puzzleText">
           Unfiltered Array: {JSON.stringify(this.state.unfilteredArray)}{" "}
         </span>
-        <input
+        <input placeholder='Filter by string'
           onChange={e => this.handleChange(e.target.value)}
           className="inputLine"
           type="text"

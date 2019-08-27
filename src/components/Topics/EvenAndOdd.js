@@ -34,7 +34,7 @@ class EvenAndOdd extends Component {
         return (
             <div className='puzzleBox evenAndOddPB'>
                 <h4>Evens and Odds</h4>
-                <input onChange={(e) => this.handleChange(e.target.value)} className='inputLine' type="text" name="" id=""/>
+                <input placeholder='Comma Delimited List of #s' onChange={(e) => this.handleChange(e.target.value)} className='inputLine' type="text" name="" id=""/>
                 <button onClick={() => {this.assignEvenAndOdds(this.state.userInput)} } className='confirmationButton'>Split</button>
                 <span className='resultsBox'>Evens: {JSON.stringify(this.state.evenArray)} </span>
                 <span className='resultsBox'>Odds: {JSON.stringify(this.state.oddArray)}</span>
