@@ -37,8 +37,6 @@ class FilterString extends Component {
     let result = {filteredArray: filtered};
     this.setState(result);
 
-    // this.setState({filteredArray: filtered})
-    // console.log(filteredArray)
   }
 
   render() {
